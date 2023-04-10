@@ -13,7 +13,7 @@ $(document).ready(function () {
           <h5 class="card-title" style="font-style: italic">${category.name}</h5>
           <p class="card-text" >Active: ${category.active}</p>
           <p class="card-text">Mahsulotlar soni: ${category.mahsulotlar.length}</p>
-          <a id="productOfCategory" href="http://localhost/dashboard/product/0009792:2006:30:11/shahrizod/page/${category.id}" onclick="localStorage.setItem('categoryId', ${category.id})" class="btn btn-primary">Mahsulotlarni ko'rish</a>
+          <a id="productOfCategory" href="https://restaurant-shahrizod.herokuapp.com/dashboard/product/0009792:2006:30:11/shahrizod/page/${category.id}" onclick="localStorage.setItem('categoryId', ${category.id})" class="btn btn-primary">Mahsulotlarni ko'rish</a>
         </div>
       </div>
     </div>`

@@ -5,7 +5,7 @@ $(document).ready(function (){
         success: function (categories) {
             $('#card').append(`
                     ${categories.length} <br>
-                    <a href="http://localhost/dashboard/category/categoryList/0009792:2006:30:11/shahrizod" class="btn btn-outline-primary">Categoryga o'tish</a>
+                    <a href="https://restaurant-shahrizod.herokuapp.com/dashboard/category/categoryList/0009792:2006:30:11/shahrizod" class="btn btn-outline-primary">Categoryga o'tish</a>
                   `)
         }
     })
@@ -19,7 +19,7 @@ $.ajax({
     success: function (products){
         $('#card1').append(`
             ${products.length} <br>
-            <a href="http://localhost/dashboard/product/0009792:2006:30:11/shahrizod" class="btn btn-outline-danger">Productga o'tish</a>
+            <a href="https://restaurant-shahrizod.herokuapp.com/dashboard/product/0009792:2006:30:11/shahrizod" class="btn btn-outline-danger">Productga o'tish</a>
         `)
     }
 })
@@ -30,7 +30,7 @@ $.ajax({
         success: function (aware){
             $('#card2').append(`
                 ${aware.length} <br>
-                            <a href="http://localhost/dashboard/aware/awareList/0009792:2006:30:11/shahrizod" class="btn btn-outline-warning">Awarega o'tish</a>
+                            <a href="https://restaurant-shahrizod.herokuapp.com/dashboard/aware/awareList/0009792:2006:30:11/shahrizod" class="btn btn-outline-warning">Awarega o'tish</a>
             `)
         }
     })
@@ -42,7 +42,7 @@ $.ajax({
         success: function (xabarlar){
             $('#card3').append(`
                 ${xabarlar.length} <br>
-                            <a href="http://localhost/dashboard/xabarlar/0009792:2006:30:11/shahrizod" class="btn btn-outline-success">Xabarlarni ko'rish</a>
+                            <a href="https://restaurant-shahrizod.herokuapp.com/dashboard/xabarlar/0009792:2006:30:11/shahrizod" class="btn btn-outline-success">Xabarlarni ko'rish</a>
             `)
         }
     })
