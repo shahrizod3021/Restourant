@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $.ajax({
-        url: 'dashboard/category/list',
+        url: '/dashboard/category/list',
         method: 'GET',
         success: function (categories) {
             $.each(categories, function (tr, category) {

@@ -37,12 +37,9 @@ public class CategoryService {
 
     public Result addCategory(ReqCategory reqCategory) {
         if (reqCategory.getName().trim().length() != 0) {
-            if (!categoryRepository.existsCategoryByName(reqCategory.getName())) {
                 Category category = new Category(reqCategory.getName(), true, reqCategory.getPhoto());
                 categoryRepository.save(category);
                 return new Result("categoriya saqlandi", true);
-            }
-            return new Result("ushbu categoriya restoranda mavjud", false);
         }
         return new Result("categoriya nomini kiriting", false);
     }
