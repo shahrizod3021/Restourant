@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+  <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link rel="stylesheet" th:href="@{/assets/plugins/Contactjon.css}">
+  <style>
+    *{
+      scroll-behavior: smooth;
+    }
+    .navbar:hover{
+      transition: 1s;
+      box-shadow: 1px 1px 10px 1px #999999;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a style="font-size: 35px; letter-spacing: 2px; font-style: oblique; " class="navbar-brand" href="http://localhost/main">Resto<span class="text-info" style="font-style: italic; font-size: 35px">urant</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a style="font-size: 15px" class="nav-link" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 15px">
+              Menu
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="http://localhost/dashboard/category/any">Kategorylar</a></li>
+              <li><a class="dropdown-item" href="#">Hamma mahsulotlar</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="contactjon mb-5">
+  <h1 class="text-center text-light" style="padding-top: 10%">Enjoy Our Product</h1>
+  <a class="btn btn-info" href="#contactqozi" style="margin-left: 45%">
+    More Info
+  </a>
+</div>
+<div class="container" id="contactqozi" style="width: 75%; padding: 5%; box-shadow: 1px 1px 5px 1px #999999">
+  <h1 class="text-center text-info" style="letter-spacing: 1px; font-family: 'MS UI Gothic',sans-serif">
+    Contact Us and enjoy our product
+  </h1>
+  <form >
+    <label for="name" class="mb-3">
+      Name
+    </label>
+    <input type="text" placeholder="Enter your name" id="name" name="name" class="form-control form-control border-primary-subtle mb-3">
+    <label for="phonenumber" class="mb-2">Phone Number</label>
+    <div class="input-group mb-3">
+      <span class="input-group-text border-primary-subtle" id="basic-addon1">+998 </span>
+      <input type="number" class="form-control border-primary-subtle" placeholder="enter the phone number"
+             aria-label="userphonenumber" aria-describedby="basic-addon1" id="phonenumber"
+             name="phonenumber">
+    </div>
+    <label for="message" class="mt-3">Message</label>
+    <div class="form-floating mt-4 mb-3">
+      <textarea class="form-control form-control border-primary-subtle" placeholder="Leave a comment here" id="message" style="height: 100px"></textarea>
+      <label for="message">Write  your opininon</label>
+    </div>
+    <button class="btn btn-outline-info" type="button" id="sendMessage">
+      Send me
+    </button>
+  </form>
+</div>
+
+<script th:src="@{/assets/plugins/Xabarlar.js}"></script>
+</body>
+</html>

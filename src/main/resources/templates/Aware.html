@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aware</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{/assets/plugins/Sidebar.css}">
+</head>
+<body>
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <a
+                        href="http://localhost/dashboard/category/admindashboard/0009792:2006:30:11/shahrizod"
+                        class="list-group-item list-group-item-action py-2 ripple "
+                        aria-current="true"
+                >
+                    <i class="bi bi-speedometer fa-fw me-3"></i><span>Main Dashboard</span>
+                </a>
+                <a href="http://localhost/dashboard/category/categoryList/0009792:2006:30:11/shahrizod" class="list-group-item list-group-item-action py-2 ripple ">
+                    <i class="bi bi-card-list fa-fw me-3"></i><span>Category</span>
+                </a>
+                <a href="http://localhost/dashboard/product/0009792:2006:30:11/shahrizod" class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-cart fa-fw me-3"></i><span>Product</span></a
+                >
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple active"
+                ><i class="bi bi-bell fa-fw me-3"></i><span>Awares</span></a
+                >
+                <a href="http://localhost/dashboard/xabarlar/0009792:2006:30:11/shahrizod" class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-telegram fa-fw me-3"></i><span>Xabarlar</span></a
+                >
+                <a href="http://localhost/main/zakazlar" class="list-group-item list-group-item-action py-2 ripple "
+                ><i class="bi bi-cart fa-fw me-3"></i><span>Zakazlar</span></a
+                >
+            </div>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <h2 class="text-primary">Admin Dashboard</h2>
+            </a>
+
+
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 58px;">
+    <div class="container">
+        <div class="col ">
+            <h1 class="text-center text-warning pt-2">
+                Aware action
+            </h1>
+            <div class="col pb-3">
+                <button class="btn btn-warning" type="button" data-bs-target="#awareModal" data-bs-toggle="modal">
+                    <i class="bi-building-add"></i>
+                </button>
+            </div>
+            <div class="col">
+                <table id="awarejonTable">
+
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="awareModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-warning" id="staticBackdropLabel">Aware Create Action</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <label for="name">
+                                name
+                            </label>
+                            <input type="text" placeholder="enter the name" id="name" name="name" class="form-control"
+                                   required/>
+                            <label for="link">
+                                link
+                            </label>
+                            <input type="text" placeholder="enter the link" id="link" name="link" class="form-control"
+                                   required/>
+                            <label for="color">
+                                color
+                            </label>
+                            <input type="color" placeholder="enter the color" id="color" name="color"
+                                   class="form-control"
+                                   required/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                        <button type="button" class="btn btn-outline-success" id="saveAware">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="awareDeleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabelDelete">Delete Action</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Are you shure to you want permenently delete this aware</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                        <button type="button" class="btn btn-outline-danger" id="deleteAware">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="awareEditModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabelEdit" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabelEdit">Edit Action</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <label for="editaName">
+                                name
+                            </label>
+                            <input type="text" placeholder="enter the name" id="editaName" name="editaName" class="form-control"
+                                   required/>
+                            <label for="editLink">
+                                link
+                            </label>
+                            <input type="text" placeholder="enter the link" id="editLink" name="editLink" class="form-control"
+                                   required/>
+                            <label for="editColor">
+                                color
+                            </label>
+                            <input type="color" placeholder="enter the color" id="editColor" name="editColor"
+                                   class="form-control"
+                                   required/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                        <button type="button" class="btn btn-outline-success" id="editAware">Save Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script th:src="@{/assets/plugins/DashboardPanel.js}"></script>
+<script th:src="@{/assets/plugins/Aware.js}"></script>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CategoryAdd</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+  <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link rel="stylesheet" th:href="@{/assets/plugins/Sidebar.css}">
+
+</head>
+<body>
+<header>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a
+                href="http://localhost/dashboard/category/admindashboard/0009792:2006:30:11/shahrizod"
+                class="list-group-item list-group-item-action py-2 ripple "
+                aria-current="true"
+        >
+          <i class="bi bi-speedometer fa-fw me-3"></i><span>Main Dashboard</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+          <i class="bi bi-card-list fa-fw me-3"></i><span>Category</span>
+        </a>
+        <a href="http://localhost/dashboard/product/0009792:2006:30:11/shahrizod" class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="bi bi-cart fa-fw me-3"></i><span>Product</span></a
+        >
+        <a href="http://localhost/dashboard/aware/awareList/0009792:2006:30:11/shahrizod" class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="bi bi-bell fa-fw me-3"></i><span>Awares</span></a
+        >
+        <a href="http://localhost/dashboard/xabarlar/0009792:2006:30:11/shahrizod" class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="bi bi-telegram fa-fw me-3"></i><span>Xabarlar</span></a
+        >
+        <a href="http://localhost/main/zakazlar" class="list-group-item list-group-item-action py-2 ripple "
+        ><i class="bi bi-cart fa-fw me-3"></i><span>Zakazlar</span></a
+        >
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+  <!-- Navbar -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <h2 class="text-primary">Admin Dashboard</h2>
+      </a>
+
+
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 58px;">
+  <div class="container">
+    <div class="col ">
+      <h1 class="text-center text-primary pt-2">
+        Category action
+      </h1>
+      <div class="col pb-3">
+        <button class="btn btn-primary" type="button"  data-bs-target="#categoryModal" data-bs-toggle="modal">
+          <i class="bi-building-add"></i>
+        </button>
+      </div>
+      <div class="col">
+          <table id="categoryjonTable">
+
+          </table>
+      </div>
+    </div>
+
+    <div class="modal fade" id="categoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-primary" id="staticBackdropLabel">Category Add Action</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <label for="name">
+                name
+              </label>
+              <input type="text" placeholder="enter the name" id="name" name="name" class="form-control"
+                     required/>
+              <label for="photo">
+                photo url
+              </label>
+              <input type="text" placeholder="enter the url photo" id="photo" name="photo" class="form-control"
+                     required/>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+            <button type="button" class="btn btn-outline-success" id="saveCategory">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--    DELETE MODAL-->
+    <div class="modal fade" id="categoryDeleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabelDelete" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabelDelete">Delete Action</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5 class="text-danger">Are you shure to you want permenently delete this category‼️‼️</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+            <button type="button" class="btn btn-outline-danger" id="deleteCategory">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- EDIT MODAL -->
+    <div class="modal fade" id="categoryEditModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabelEdit" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-warning" id="staticBackdropLabelEdit">Edit Action</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form >
+              <label for="editname">
+                Editable name
+              </label>
+                <input type="text" placeholder="enter editable name" class="form-control" id="editname" name="editname" required/>
+              <label for="editPhoto">
+                Editable photo
+              </label>
+              <input type="text" placeholder="enter editable photo" class="form-control" id="editPhoto" name="editPhoto" required/>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+            <button type="button" class="btn btn-outline-success" id="editCategory">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<script th:src="@{/assets/plugins/Category.js}"></script>
+</body>
+</html>

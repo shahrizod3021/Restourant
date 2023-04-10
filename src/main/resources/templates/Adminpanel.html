@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminPanel</title>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{/assets/plugins/Sidebar.css}">
+</head>
+<body>
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <a
+                        href="#"
+                        class="list-group-item list-group-item-action py-2 ripple active"
+                        aria-current="true"
+                >
+                    <i class="bi bi-speedometer fa-fw me-3"></i><span>Main Dashboard</span>
+                </a>
+                <a href="http://localhost/dashboard/category/categoryList/0009792:2006:30:11/shahrizod"
+                   class="list-group-item list-group-item-action py-2 ripple ">
+                    <i class="bi bi-card-list fa-fw me-3"></i><span>Category</span>
+                </a>
+                <a href="http://localhost/dashboard/product/0009792:2006:30:11/shahrizod"
+                   class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-cart fa-fw me-3"></i><span>Product</span></a
+                >
+                <a href="http://localhost/dashboard/aware/awareList/0009792:2006:30:11/shahrizod"
+                   class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-bell fa-fw me-3"></i><span>Awares</span></a
+                >
+                <a href="http://localhost/dashboard/xabarlar/0009792:2006:30:11/shahrizod"
+                   class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-telegram fa-fw me-3"></i><span>Xabarlar</span></a
+                >
+                <a href="http://localhost/main/zakazlar" class="list-group-item list-group-item-action py-2 ripple "
+                ><i class="bi bi-cart fa-fw me-3"></i><span>Zakazlar</span></a
+                >
+            </div>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <h2 class="text-primary">Admin Dashboard</h2>
+            </a>
+            <!-- Search form -->
+            <form class="d-none d-md-flex input-group w-auto my-auto">
+
+            </form>
+
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 58px;">
+    <div class="container pt-4"></div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card border-primary mb-3">
+                    <img src="" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Category</h5>
+                        <p class="card-text" id="card">Jami kategorylar soni</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-danger mb-3">
+                    <img src="" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Product</h5>
+                        <p class="card-text" id="card1">Jami productlar soni: </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-warning mb-3">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Aware</h5>
+                        <p class="card-text" id="card2">Jami awarelar soni: </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-success mb-3">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Xabarlar</h5>
+                        <p class="card-text" id="card3">Jami xabarlar soni: </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="progresofRestoran mt-5">
+            <h5>Jami</h5>
+            <div class="progress mb-3 " id="jami">
+
+            </div>
+            <!--    progress-->
+            <h5 id="c1">Category</h5>
+            <div class="progress mb-3 " id="p1">
+            </div>
+            <h5 id="pr1">Product</h5>
+            <div class="progress mb-3 " id="p2">
+            </div>
+            <h5 id="aw1">Awares</h5>
+            <div class="progress mb-3 " id="p3">
+            </div>
+            <h5 id="us1">Xabarlar</h5>
+            <div class="progress mb-3 " id="p4">
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+<script th:src="@{/assets/plugins/DashboardPanel.js}"></script>
+</body>
+</html>
